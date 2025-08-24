@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box; /*el tamaño total de la caja nunca excederá el valor que le pongas a width o height*/
+}
+
+body{
+    background-image: linear-gradient(90deg, #45c46d, #13af3a);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+.buscar{
+    position: relative;
+}
+
+.buscar .ingrese{ /*el padre va primero luego el hijo*/
+    border: 0;
+    font-size: 20px;
+    height: 50px; /*mismo ancho y alto con el boton para que este lo tape*/
+    width: 50px;
+    transition: width 0.3s ease; /*transicion suave del ancho*/
+    
+}
+
+.btn{
+    background-color: aqua;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute; /*fuera del flujo normal*/
+    right: 0; /*se posiciona fijo en el contenedor*/
+    height: 50px;
+    width: 50px;
+}
+
+.btn:focus,/*al hacer click o interactual con el teclado*/
+.ingrese:focus{
+    outline: none; /*elimina el controno al clickear con el mouse*/
+}
+
+.buscar .ingrese.active{
+    width: 250px;
+}
+
